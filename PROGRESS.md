@@ -12,6 +12,11 @@ Usage quota was not exposed by the tools in this session. It is unknown. No toke
 - Demo database at `data/demo-db.json` when Supabase env vars are empty.
 - SQL migration at `supabase/migrations/001_init.sql`.
 - Docs listed in the README.
+- Code pushed to https://github.com/jyoti-dev0813/whatsapp-restaurant-order- on `main`. `.env.local` and `data/` were not included.
+
+## Not deployed
+
+The app was not put on a public host. Demo mode uses passwords that are in the repository, and its file database does not survive on a serverless host. [Vercel Hobby](https://vercel.com/docs/plans/hobby) is free and does not bill you, but it is limited to personal, non-commercial use. A cafe product would need Vercel Pro, which requires a card. No host account was signed in, and no payment method was entered.
 
 ## Checks actually run
 

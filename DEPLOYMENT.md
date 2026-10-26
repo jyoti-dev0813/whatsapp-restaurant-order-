@@ -26,7 +26,7 @@ The anon key may be public. The service-role key may not.
 
 ## App hosting
 
-This repository does not deploy anywhere. A free application host can still pause, sleep, or change its terms. Read the current free-tier terms before using one. Vercel, Netlify, and similar hosts have had free tiers that are not a promise of permanent hosting, and some features or bandwidth past the free allowance can require a paid plan.
+The source is on GitHub at https://github.com/jyoti-dev0813/whatsapp-restaurant-order-. It is not deployed. Demo mode must stay off public URLs because the demo passwords are in the repository and the local file database is not durable on a serverless host. [Vercel Hobby](https://vercel.com/docs/plans/hobby) is free for personal, non-commercial projects and does not charge a card. Offering this app to cafes is commercial use and would require a paid plan. Do not upgrade. A free application host can still pause, sleep, or change its terms. Read the current free-tier terms before using one. Vercel, Netlify, and similar hosts have had free tiers that are not a promise of permanent hosting, and some features or bandwidth past the free allowance can require a paid plan.
 
 If you deploy later:
 
