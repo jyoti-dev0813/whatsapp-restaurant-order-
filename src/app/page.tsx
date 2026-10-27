@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { connection } from "next/server";
 
-import { appMode } from "@/lib/config";
+import { appMode, isHostedDemo } from "@/lib/config";
 
 export default async function HomePage() {
   await connection();
@@ -47,7 +47,9 @@ export default async function HomePage() {
         </div>
         {mode === "demo" ? (
           <p className="mt-8 max-w-2xl rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-950">
-            Supabase is not configured, so this copy is in demo mode. Sign in with a local demo account. Data stays in a file on this computer and is not written to Supabase.
+            {isHostedDemo()
+              ? "Supabase is not configured, so this copy is in demo mode. Bills are kept in temporary server memory and can disappear. They are not written to Supabase. The demo sign-in details are public."
+              : "Supabase is not configured, so this copy is in demo mode. Sign in with a local demo account. Data stays in a file on this computer and is not written to Supabase."}
           </p>
         ) : (
           <p className="mt-8 text-sm text-muted">Connected to Supabase. Cafe data is stored in your free project.</p>

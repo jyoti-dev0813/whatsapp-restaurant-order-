@@ -1,5 +1,5 @@
 import { AppShell } from "@/components/app-shell";
-import { isSupabaseConfigured } from "@/lib/config";
+import { isHostedDemo, isSupabaseConfigured } from "@/lib/config";
 import { loadCafe } from "@/server/data";
 import { requireActor } from "@/server/session";
 
@@ -17,7 +17,13 @@ export default async function WorkspaceLayout({ children }: { children: React.Re
   }
 
   return (
-    <AppShell cafeName={cafe.name} fullName={actor.fullName} role={actor.role} demo={!isSupabaseConfigured()}>
+    <AppShell
+      cafeName={cafe.name}
+      fullName={actor.fullName}
+      role={actor.role}
+      demo={!isSupabaseConfigured()}
+      hosted={isHostedDemo()}
+    >
       {children}
     </AppShell>
   );

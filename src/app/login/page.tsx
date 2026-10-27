@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { LoginForm } from "@/components/auth/login-form";
 import { Card } from "@/components/ui/card";
-import { isSupabaseConfigured } from "@/lib/config";
+import { isHostedDemo, isSupabaseConfigured } from "@/lib/config";
 import { DEMO_ACCOUNTS } from "@/lib/demo/credentials";
 
 export default async function LoginPage({
@@ -19,7 +19,11 @@ export default async function LoginPage({
         <p className="text-sm font-semibold text-accent">CafeBill</p>
         <h1 className="mt-2 text-2xl font-semibold">Sign in</h1>
         <p className="mt-2 text-sm text-muted">
-          {demo ? "Demo mode is on. These accounts exist only on this computer." : "Use the account for your cafe."}
+          {demo
+            ? isHostedDemo()
+              ? "Demo mode is on. These sign-in details are public, and bills on this host can disappear."
+              : "Demo mode is on. These accounts exist only on this computer."
+            : "Use the account for your cafe."}
         </p>
         <div className="mt-6">
           <LoginForm

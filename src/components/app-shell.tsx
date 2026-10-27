@@ -37,12 +37,14 @@ export function AppShell({
   fullName,
   role,
   demo,
+  hosted,
   children,
 }: {
   cafeName: string;
   fullName: string;
   role: string;
   demo: boolean;
+  hosted?: boolean;
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
@@ -106,7 +108,9 @@ export function AppShell({
         </header>
         {demo ? (
           <p className="no-print border-b border-amber-200 bg-amber-50 px-4 py-2 text-sm text-amber-950 md:px-6">
-            Demo mode. Bills are stored in a local file on this computer. They are not saved to Supabase.
+            {hosted
+              ? "Demo mode. Bills are kept in temporary server memory and can disappear. They are not saved to Supabase."
+              : "Demo mode. Bills are stored in a local file on this computer. They are not saved to Supabase."}
           </p>
         ) : null}
         <main className="px-4 py-6 md:px-6">{children}</main>

@@ -25,3 +25,7 @@ export function getAppUrl(): string {
 export function appMode(): "demo" | "supabase" {
   return isSupabaseConfigured() ? "supabase" : "demo";
 }
+
+export function isHostedDemo(): boolean {
+  return appMode() === "demo" && process.env.VERCEL === "1";
+}
